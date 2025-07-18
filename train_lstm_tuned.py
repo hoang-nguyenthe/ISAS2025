@@ -167,7 +167,7 @@ if __name__ == "__main__":
 )
         print("Đánh giá mô hình trên dữ liệu kiểm tra...")
         best_model = tf.keras.models.load_model(
-            checkpoint_filepath
+            checkpoint_filepath)
 
         proba = best_model.predict(X_test_seq_filtered, verbose=0)
         y_pred = np.argmax(proba, axis=1)
