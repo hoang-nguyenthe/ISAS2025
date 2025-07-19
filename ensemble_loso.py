@@ -14,8 +14,8 @@ DATA_FILE = 'features_continuous_unfiltered.csv'
 HYBRID_DIR = 'saved_models/hybrid_tuned'
 LSTM_DIR = 'saved_models/lstm_tuned'
 FOLDS = [1, 2, 3, 5]  # Các subject_id tương ứng với fold
-weight_hybrid = 0.5
-weight_lstm = 0.5
+weight_hybrid = 0.48
+weight_lstm = 0.52
 assert abs(weight_hybrid + weight_lstm - 1.0) < 1e-6
 
 # --- Hàm tạo chuỗi ---
