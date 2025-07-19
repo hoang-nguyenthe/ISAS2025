@@ -45,7 +45,7 @@ All features are computed on **interpolated and smoothed keypoints** to reduce n
 - BatchNorm and Dropout for generalization
 - Effective for repetitive behaviors (*Walking*, *Sitting*)
 
-### 2. **Bi-LSTM + Transformer**
+### 2. **Hybrid: Bi-LSTM + Transformer**
 - Bi-LSTM for short-term motion encoding
 - Transformer for long-range, non-linear dependencies
 - Effective for bursty behaviors (*Attacking*, *Throwing*)
