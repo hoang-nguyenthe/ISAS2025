@@ -8,8 +8,8 @@ We propose an abnormal activity recognition system for individuals with developm
 
 ## 👥 Authors
 
-The Hoang Nguyen, Gia Huy Ly, and Duy Khanh Dinh Hoang
-All authors are currently studying at VNU-HCM, Ho Chi Minh City University of Technology (HCMUT).
+The Hoang Nguyen, Gia Huy Ly, and Duy Khanh Dinh Hoang.
+All authors are currently studying at VNU-HCM, Ho Chi Minh City University of Technology (HCMUT)
 
 ## 🗂️ Dataset
 
@@ -194,3 +194,23 @@ pip install -r requirements.txt
 - **Combines:** `final_lstm_tuned_model` + `final_hybrid_model` (soft voting: 52/48)  
 - **Output:** `Binary_Phoenix_test.csv` with:
   - `participant_id`, `timestamp`, `predicted_label`
+
+### ⚖️ [Optional] Optimize Ensemble Weights via Grid Search
+
+- **Script:** `weighted.py`
+- **Purpose:**  
+  Finds the optimal weighting between Hybrid and LSTM models using **soft voting**, maximizing the **weighted F1-score** (abnormal classes are prioritized using class weights).
+
+- **How it works:**  
+  - Performs grid search (e.g., Hybrid weights from 0.0 to 1.0)  
+  - Uses preloaded fold predictions from both models  
+  - Applies weight ×3 for abnormal activity classes during `f1_score` computation  
+  - Prints out scores and the best weight combination
+
+- **Example Output:**  
+  ```
+  Hybrid = 0.40, LSTM = 0.60 → F1 = 0.6281
+  ```
+
+- **Note:**  
+  Run this script **before `ensemble_loso.py`** to determine the best weight ratio.
