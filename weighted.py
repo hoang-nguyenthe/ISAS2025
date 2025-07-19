@@ -79,7 +79,7 @@ if __name__ == "__main__":
     feature_cols, encoder, abnormal_class_indices = load_common_config(HYBRID_DIR)
     df_filtered['Action Label Encoded'] = encoder.transform(df_filtered['Action Label'])
     all_fold_results = preload_fold_predictions(df_filtered, feature_cols, encoder)
-    weight_list = [round(w, 2) for w in np.arange(0.4, 0.6, 0.02)]
+    weight_list = [round(w, 2) for w in np.arange(0.0, 1.0, 0.05)]
     results = []
     for w in weight_list:
         w_hybrid, w_lstm, mean_f1 = evaluate_weight(w, all_fold_results)
