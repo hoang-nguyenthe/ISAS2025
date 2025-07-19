@@ -207,10 +207,7 @@ pip install -r requirements.txt
   - Applies weight ×3 for abnormal activity classes during `f1_score` computation  
   - Prints out scores and the best weight combination
 
-- **Example Output:**  
-  ```
-  Hybrid = 0.40, LSTM = 0.60 → F1 = 0.6281
-  ```
+
 
 - **Note:**  
   Run this script **before `ensemble_loso.py`** to determine the best weight ratio.
