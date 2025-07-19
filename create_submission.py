@@ -9,8 +9,8 @@ FRAME_FILE = "test data_keypoint.csv"
 OUTPUT_FILE = "Binary_Phoenix_test.csv"
 LSTM_DIR = "final_lstm_tuned_model_artifacts"
 HYBRID_DIR = "final_hybrid_tuned_model_artifacts"
-WEIGHT_LSTM = 0.6
-WEIGHT_HYBRID = 0.4
+WEIGHT_LSTM = 0.52
+WEIGHT_HYBRID = 0.48
 TIME_STEPS = 60
 
 def create_sequences(X, time_steps=60):
