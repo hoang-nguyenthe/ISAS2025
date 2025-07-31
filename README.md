@@ -197,6 +197,47 @@ pip install -r requirements.txt
 - **Output:** `Binary_Phoenix_test.csv` with:
   - `participant_id`, `timestamp`, `predicted_label`
 
+---
+
+### **Task 2 Execution**
+#### **Step 1: Feature Extraction from 5 Participants (including Participant 5)**
+- **Script:** `task_2_processdata.py`  
+- **Input:** `./data/keypointlabel/keypoints_with_labels_<id>.csv` for IDs 1, 2, 3, 4, 5  
+- **Output:** `final.csv`  
+- Description: Extracts 70+ handcrafted features (motion, geometry, asymmetry, temporal-frequency) for all 5 participants. Data is interpolated and cleaned to ensure consistent feature space.
+
+#### **Step 2: Train Hybrid Model (Bi-LSTM + Transformer) – LOSO 5 folds**
+- **Script:** `task_2_hybrid_tuned.py`  
+- **Input:** `final.csv` from Step 1  
+- **Output:** `final_report_saved_models/hybrid_tuned/`  
+  - `best_model_fold_<id>.keras` for each fold  
+  - `scaler_fold_<id>.joblib` for each fold  
+  - `encoder.joblib` (label encoder used for all folds)  
+  - `feature_columns.joblib` (features used by the model)  
+- Description: Trains Hybrid model with LOSO across 5 participants. Each fold trains on 4 participants and tests on the remaining participant.
+
+#### **Step 3: Train LSTM Model – LOSO 5 folds**
+- **Script:** `task_2_lstm_tuned.py`  
+- **Input:** `final.csv` from Step 1  
+- **Output:** `final_report_saved_models/lstm_tuned/`  
+  - `best_model_fold_<id>.keras` for each fold  
+  - `scaler_fold_<id>.joblib` for each fold  
+  - `encoder.joblib`  
+  - `feature_columns.joblib`  
+- Description: Trains Deep Bi-LSTM model with LOSO across 5 participants. Results saved per fold for later ensemble.
+
+#### **Step 4: Ensemble Evaluation – LOSO 5 folds**
+- **Script:** `task_2_ensembleloso.py`  
+- **Input:** Models from Step 2 & Step 3  
+- **Output:**  
+  - LOSO per-fold Accuracy and Macro F1-score  
+  - Mean Accuracy and Macro F1-score across 5 folds  
+  - `ensemble_confusion_matrix.png` (aggregated confusion matrix for 5 folds)  
+- Description: Combines predictions from Hybrid and LSTM models using soft voting (Hybrid 48%, LSTM 52%). Evaluates model generalization to unseen participants.
+
+
+---
+
 ### ⚖️ [Optional] Optimize Ensemble Weights via Grid Search
 
 - **Script:** `weighted.py`
