@@ -65,7 +65,7 @@ Weights tuned via LOSO cross-validation.
 | Input sequence length    | 60 frames (≈ 2 seconds)       |
 | Feature rolling window   | 45 frames (≈ 1.5 seconds)     |
 | Overlap rate             | ~90%                          |
-| Subjects used for training | 1, 2, 3, 5                  |
+| Subjects used for training | 1, 2, 3, 4, 5               |
 
 Sliding window segmentation ensures dense sampling for short-duration activities.
 
