@@ -200,7 +200,7 @@ pip install -r requirements.txt
 ---
 
 ### **Task 2 Execution**
-#### **Step 1: Feature Extraction from 5 Participants (including Participant 5)**
+#### **Step 1: Feature Extraction from 5 Participants (including Participant 4)**
 - **Script:** `task_2_processdata.py`  
 - **Input:** `./data/keypointlabel/keypoints_with_labels_<id>.csv` for IDs 1, 2, 3, 4, 5  
 - **Output:** `final.csv`  
@@ -249,7 +249,6 @@ pip install -r requirements.txt
   - Uses preloaded fold predictions from both models  
   - Applies weight ×3 for abnormal activity classes during `f1_score` computation  
   - Prints out scores and the best weight combination
-
 
 
 - **Note:**  
