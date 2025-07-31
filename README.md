@@ -200,13 +200,13 @@ pip install -r requirements.txt
 ---
 
 ### **Task 2 Execution**
-#### **Step 1: Feature Extraction from 5 Participants (including Participant 4)**
+### 🧩 Step 1: Feature Extraction from 5 Participants (including Participant 4)**
 - **Script:** `task_2_processdata.py`  
 - **Input:** `./data/keypointlabel/keypoints_with_labels_<id>.csv` for IDs 1, 2, 3, 4, 5  
 - **Output:** `final.csv`  
 - Description: Extracts 70+ handcrafted features (motion, geometry, asymmetry, temporal-frequency) for all 5 participants. Data is interpolated and cleaned to ensure consistent feature space.
 
-#### **Step 2: Train Hybrid Model (Bi-LSTM + Transformer) – LOSO 5 folds**
+### ⚙️ Step 2: Train Hybrid Model (Bi-LSTM + Transformer) – LOSO 5 folds**
 - **Script:** `task_2_hybrid_tuned.py`  
 - **Input:** `final.csv` from Step 1  
 - **Output:** `final_report_saved_models/hybrid_tuned/`  
@@ -216,7 +216,7 @@ pip install -r requirements.txt
   - `feature_columns.joblib` (features used by the model)  
 - Description: Trains Hybrid model with LOSO across 5 participants. Each fold trains on 4 participants and tests on the remaining participant.
 
-#### **Step 3: Train LSTM Model – LOSO 5 folds**
+### ⚙️ Step 3: Train LSTM Model – LOSO 5 folds**
 - **Script:** `task_2_lstm_tuned.py`  
 - **Input:** `final.csv` from Step 1  
 - **Output:** `final_report_saved_models/lstm_tuned/`  
@@ -226,7 +226,7 @@ pip install -r requirements.txt
   - `feature_columns.joblib`  
 - Description: Trains Deep Bi-LSTM model with LOSO across 5 participants. Results saved per fold for later ensemble.
 
-#### **Step 4: Ensemble Evaluation – LOSO 5 folds**
+### 📊 Step 4: Ensemble Evaluation – LOSO 5 folds**
 - **Script:** `task_2_ensembleloso.py`  
 - **Input:** Models from Step 2 & Step 3  
 - **Output:**  
@@ -234,7 +234,7 @@ pip install -r requirements.txt
   - Mean Accuracy and Macro F1-score across 5 folds  
   - `ensemble_confusion_matrix.png` (aggregated confusion matrix for 5 folds)  
 - Description: Combines predictions from Hybrid and LSTM models using soft voting (Hybrid 48%, LSTM 52%). Evaluates model generalization to unseen participants.
-
+![Task 2 Ensemble Confusion Matrix](ensemble_confusion_matrix.png)
 
 ---
 
