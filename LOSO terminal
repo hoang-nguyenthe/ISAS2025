@@ -1,0 +1,105 @@
+/*
+python task 2_ensembleloso.py
+
+🏁 Bắt đầu LOSO Ensemble với Weighted Soft Voting (Hybrid=0.48, LSTM=0.52)
+
+=== Fold 1 | Test subject: 1 ===
+2025-07-31 00:09:23.441359: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M1 Pro
+2025-07-31 00:09:23.441520: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 16.00 GB
+2025-07-31 00:09:23.441530: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 5.33 GB
+2025-07-31 00:09:23.441726: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:305] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2025-07-31 00:09:23.441741: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:271] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+2025-07-31 00:09:27.510615: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:117] Plugin optimizer for device_type GPU is enabled.
+✅ Accuracy: 0.5405 | F1-score: 0.4826
+                 precision    recall  f1-score   support
+
+      Attacking      0.557     0.410     0.472      4470
+   Biting nails      0.783     0.537     0.637      5610
+  Eating snacks      0.615     0.869     0.720     14730
+   Head banging      0.218     0.957     0.354      3810
+Sitting quietly      0.152     0.071     0.097     14252
+Throwing things      0.768     0.615     0.683      4530
+    Using phone      0.043     0.002     0.004     10980
+        Walking      0.819     0.982     0.893     14609
+
+       accuracy                          0.540     72991
+      macro avg      0.494     0.555     0.483     72991
+   weighted avg      0.478     0.540     0.482     72991
+
+
+=== Fold 2 | Test subject: 2 ===
+✅ Accuracy: 0.6577 | F1-score: 0.7142
+                 precision    recall  f1-score   support
+
+      Attacking      0.890     0.863     0.876      5760
+   Biting nails      0.755     0.922     0.831      2790
+  Eating snacks      0.913     0.942     0.927     14670
+   Head banging      0.923     0.955     0.939      3930
+Sitting quietly      0.087     0.047     0.061     14641
+Throwing things      0.884     0.788     0.833      3960
+    Using phone      0.223     0.349     0.272     10980
+        Walking      0.977     0.973     0.975     14460
+
+       accuracy                          0.658     71191
+      macro avg      0.706     0.730     0.714     71191
+   weighted avg      0.641     0.658     0.645     71191
+
+
+=== Fold 3 | Test subject: 3 ===
+✅ Accuracy: 0.7696 | F1-score: 0.7584
+                 precision    recall  f1-score   support
+
+      Attacking      0.852     0.622     0.719      5340
+   Biting nails      0.886     0.619     0.729      8880
+  Eating snacks      0.600     0.794     0.683     10620
+   Head banging      0.922     0.863     0.892      6210
+Sitting quietly      0.915     0.679     0.780     27450
+Throwing things      0.509     0.856     0.638      3750
+    Using phone      0.633     0.755     0.688     24120
+        Walking      0.917     0.960     0.938     20041
+
+       accuracy                          0.770    106411
+      macro avg      0.779     0.769     0.758    106411
+   weighted avg      0.800     0.770     0.773    106411
+
+
+=== Fold 4 | Test subject: 4 ===
+✅ Accuracy: 0.6395 | F1-score: 0.6808
+                 precision    recall  f1-score   support
+
+      Attacking      0.713     0.935     0.809      4350
+   Biting nails      0.291     0.964     0.447      8490
+  Eating snacks      0.728     0.673     0.699     18810
+   Head banging      0.869     0.744     0.802      5880
+Sitting quietly      0.941     0.594     0.728     24000
+Throwing things      0.759     0.805     0.782      3690
+    Using phone      0.313     0.189     0.235     23430
+        Walking      0.964     0.925     0.944     20131
+
+       accuracy                          0.639    108781
+      macro avg      0.697     0.729     0.681    108781
+   weighted avg      0.703     0.639     0.644    108781
+
+
+=== Fold 5 | Test subject: 5 ===
+✅ Accuracy: 0.7141 | F1-score: 0.7560
+                 precision    recall  f1-score   support
+
+      Attacking      0.957     0.949     0.953      4530
+   Biting nails      0.943     0.955     0.949      5640
+  Eating snacks      0.967     0.019     0.037     14250
+   Head banging      0.964     0.905     0.934      3930
+Sitting quietly      0.436     0.983     0.604     14851
+Throwing things      0.886     0.967     0.924      4050
+    Using phone      0.981     0.509     0.671     10200
+        Walking      0.974     0.981     0.977     14310
+
+       accuracy                          0.714     71761
+      macro avg      0.889     0.783     0.756     71761
+   weighted avg      0.853     0.714     0.660     71761
+
+
+📊 TỔNG KẾT ENSEMBLE LOSO:
+Mean Accuracy: 0.6643
+Mean F1-score:  0.6784
+*\
