@@ -86,18 +86,18 @@ Below is the average performance across all LOSO folds for abnormal behaviors us
 
 | Abnormal Behavior    | Average F1-score |
 |----------------------|------------------|
-| Attacking            | 70.25%           |
-| Biting nails         | 56.65%           |
-| Head banging         | 72.32%           |
-| Throwing things      | 60.30%           |
+| Attacking            | 76.58%           |
+| Biting nails         | 71.86%           |
+| Head banging         | 78.42%           |
+| Throwing things      | 77.20%           |
 ## 📊 LOSO Summary Results (Normal Behaviors)
 
 | Normal Behavior       | Average F1-score |
 |-----------------------|------------------|
-| Eating snacks         | 52.33%           |
-| Sitting quietly       | 58.05%           |
-| Using phone           | 11.6%            |
-| Walking               | 93.65%           |
+| Eating snacks         | 61.32%           |
+| Sitting quietly       | 45.40%           |
+| Using phone           | 37.40%           |
+| Walking               | 94.54%           |
 
 
 ## 📁 Submission Files
