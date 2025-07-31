@@ -1,5 +1,4 @@
-# process_data.py – FINAL ✓  (ISAS 2025 Feature Generator)
-# --------------------------------------------------------
+
 import os, logging, gc
 import pandas as pd
 import numpy as np
@@ -63,7 +62,7 @@ def movement_regularity(x):
     peaks, _ = find_peaks(x)
     return 0.0 if len(peaks) < 2 else np.std(np.diff(peaks))
 
-# ------------- FEATURES CHO 1 SUBJECT -------------
+# ------------- FEATURES FOR 1 SUBJECT -------------
 def build_features_one(df_sub):
     idx   = df_sub.index
     feat  = {}
