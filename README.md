@@ -115,6 +115,8 @@ Below is the average performance across all LOSO folds for abnormal behaviors us
 
 ## 🛠️ Setup & Execution Guide
 
+---
+### **Task 1 Execution**
 ### 1. Create and activate virtual environment:
 ```bash
 python3 -m venv venv
